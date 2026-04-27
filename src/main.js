@@ -2,6 +2,7 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 import { getImagesByQuery } from './js/pixabay-api.js';
+import { createGallery } from './js/render-functions.js';
 
 
 const form = document.querySelector('.form');
@@ -19,7 +20,6 @@ const showEmptyResultNotification = () => {
 form.addEventListener('submit', event => {
   event.preventDefault();
   const { target: searchForm } = event;
-
   const queryString = searchForm.elements['search-text'].value.trim();
 
   getImagesByQuery(queryString)
@@ -29,6 +29,7 @@ form.addEventListener('submit', event => {
         return;
       }
 
+      createGallery(data.hits);
       console.log(data.hits);
     })
     .catch(error => {
