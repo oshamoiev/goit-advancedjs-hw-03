@@ -12,7 +12,7 @@ const createGalleryItem = image => {
   return `
     <li class="gallery-item">
       <a class="gallery-link" href="${image.largeImageURL}">
-        <img class="gallery-image" src="${image.previewURL}" alt="${image.tags}" />
+        <img class="gallery-image" src="${image.previewURL}" alt="${image.name}" />
       </a>
       <div class="gallery-stats">
         <div class="gallery-stat">
