@@ -46,10 +46,10 @@ const onSearchFormSubmit = () => event => {
       }
 
       createGallery(data.hits);
-      console.log(data.hits);
     })
     .catch(error => {
       console.error(error);
+      showErrorNotification('Something went wrong. Please try again later!');
     })
     .finally(() => hideLoader());
 };
