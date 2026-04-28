@@ -30,7 +30,6 @@ form.addEventListener('submit', event => {
       }
 
       createGallery(data.hits);
-      console.log(data.hits);
     })
     .catch(error => {
       console.error(error);
